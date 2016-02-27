@@ -7,17 +7,14 @@
 	<div>
 		<h1><a href="">El Blog de Majo</h1>
 	</div>
-	<div>
-		<p>published: 27.02.2016, 12:41</p>
-		<h2><a href="">Mi primer post</h2>
-		<p>Bla bla bla bla bla bla bla bla bla bla</p>
-	</div>
 
-	<div>
-		<p>published: 27.02.2016, 12:43</p>
-		<h2><a href="">Mi segundo post</h2>
-		<p>BLA BLA BLA BLA BLA</p>
-	</div>
+	  {% for post in posts %}
+	  <div>
+	  	<p>published: {{ post.published_date }}</p>
+	  	<h1><a href="">{{ post.title }}</a></h1>
+	  	<p>{{ post.text|linebreaks }}
+	  </div>
+    {% endfor %}
 
 </body>
 </html>
